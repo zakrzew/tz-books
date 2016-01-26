@@ -6,15 +6,16 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha",
-	"lint": "jshint --exclude=node_modules/** **.js",
+    "lint": "jshint --exclude=node_modules/** **.js",
     "test:xunit": "npm run test -- --reporter xunit",
-	"watch": "nodemon index.js"
+    "watch": "nodemon index.js"
   },
   "author": "Tomasz Zakrzewski",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
+    "heroin-js": "^1.5.0",
     "lodash": "^4.0.0",
     "mongodb": "^2.1.4"
   },
@@ -22,6 +23,6 @@
     "jshint": "2.9.1",
     "mocha": "^2.3.4",
     "supertest": "^1.1.0",
-	"nodemon": "1.8.1"
+    "nodemon": "1.8.1"
   }
 }
