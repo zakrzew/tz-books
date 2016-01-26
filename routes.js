@@ -13,12 +13,18 @@ module.exports = function (stockRepository) {
         getCount: function (req, res) {
             stockRepository.getCount(req.params.isbn).then(function (result) {
                 if (result !== null) {
-                    res.status(200).json({count: result});
+                  //  res.status(200).json({count: result});
+				  console.log(result.count);
+				
+					res.status(200).send('' + result.count);
                 } else {
                     res.status(404).json({error: 'No book with ISBN: ' + req.params.isbn});
                 }
-                res.json({});
-            });
+                //res.json({});
+            }).catch(function (err) {
+                    console.error(err.stack);
+                    res.status(500).json({error: "Can't stock up right now. Try again later."});
+                });;
         },
         getAvailability: function (req, res) {
             stockRepository.getCount(req.params.isbn).then(function (result) {
