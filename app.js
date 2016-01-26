@@ -12,7 +12,7 @@ module.exports = function(stockRepository) {
     app.use(bodyParser.json());
 
     app.get('/', function (req, res) {
-        res.send('Hello World for pipelines!')
+        res.send('Hello World testing snap-ci!')
     });
 
     var routes = require('./routes')(stockRepository);
