@@ -11,6 +11,10 @@ module.exports = function (stockRepository) {
 
         },
         getCount: function (req, res) {
+			var xRequestId = req.headers['x-request-id'];	
+			var isbn = req.params.isbn;	
+  
+			console.log('tz-books (backend): getCount for isbn: ' + isbn + '; x-request-id: ' + xRequestId);
             stockRepository.getCount(req.params.isbn).then(function (result) {
                 if (result !== null) {
                   //  res.status(200).json({count: result});
